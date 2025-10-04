@@ -1,0 +1,8 @@
+In response to the latest tool implementation at xFusionCorp Industries, the system admins require the creation of a service user account. Here are the specifics:
+
+Create a user named kirsty in App Server 1 without a home directory.
+
+Solution
+ssh tony@stapp01
+Enter password
+sudo adduser --no-create-home kirsty
