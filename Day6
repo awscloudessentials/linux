@@ -1,0 +1,43 @@
+Task 
+Your task is to disable direct SSH root login on all app servers(3) within the Stratos Datacenter.
+
+Context
+By default you are on a jump host, you are to ssh into the 3 App servers and disable direct SSH root login respectively
+using their UserName, ServerName and Password as given
+
+Solution
+For App Server 1(stapp01)
+ssh tony@stapp01
+sudo vi /etc/ssh/sshd_config  <this commmand gets you into a text editor to edit the file>
+type ‘i’ to get on insert mode.
+<Find the line containing PermitRootLogin. It might be commented out with a # and set to yes, or explicitly set to yes.
+If it's commented out (#PermitRootLogin yes), uncomment it and change yes to no.
+If it's uncommented (PermitRootLogin yes), change yes to no.>
+Save by typing :x  <this saves as well as exits the text editor>
+sudo systemctl restart sshd
+systemctl status sshd <this will show the sshd service is running>
+exit
+
+For App Server 2(stapp02)
+ssh steve@stapp02
+sudo vi /etc/ssh/sshd_config  <this commmand gets you into a text editor to edit the file>
+type ‘i’ to get on insert mode.
+<Find the line containing PermitRootLogin. It might be commented out with a # and set to yes, or explicitly set to yes.
+If it's commented out (#PermitRootLogin yes), uncomment it and change yes to no.
+If it's uncommented (PermitRootLogin yes), change yes to no.>
+Save by typing :x  <this saves as well as exits the text editor>
+sudo systemctl restart sshd
+systemctl status sshd <this will show the sshd service is running>
+exit
+
+For App Server 3(stapp03)
+ssh banner@stapp03
+sudo vi /etc/ssh/sshd_config  <this commmand gets you into a text editor to edit the file>
+type ‘i’ to get on insert mode.
+<Find the line containing PermitRootLogin. It might be commented out with a # and set to yes, or explicitly set to yes.
+If it's commented out (#PermitRootLogin yes), uncomment it and change yes to no.
+If it's uncommented (PermitRootLogin yes), change yes to no.>
+Save by typing :x  <this saves as well as exits the text editor>
+sudo systemctl restart sshd
+systemctl status sshd <this will show the sshd service is running>
+exit
