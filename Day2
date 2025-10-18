@@ -7,7 +7,7 @@ Create a user named mariyam with a non-interactive shell on App Server 1.
 
 Context
 Since you are currently on a jumphost server, you need to log into the App Server using the ServerName,
- UserName and PassWord (which are already given)
+UserName and PassWord (which are already given)
 
 Solution
 ssh <username of appserver 1=tony>@<name of appserver1=stapp01>  
